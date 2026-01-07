@@ -9,7 +9,9 @@ A professional tool to test and monitor API/website reliability with comprehensi
 ## Installation
 
 ### Install all dependencies
-```pip install -r requirements.txt```
+```
+pip install -r requirements.txt
+```
 
 ### Run the server
 uvicorn main:app --reload
