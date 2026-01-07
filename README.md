@@ -6,8 +6,6 @@ A web-based testing tool that monitors API and website performance by checking r
 - Python 3.x
 - pip package manager
 
-## Installation
-
 ### Install all dependencies
 ```
 pip install -r requirements.txt
@@ -29,13 +27,22 @@ Start Test - Click button to begin analysis
 
 View Results - See comprehensive metrics
 
+## What You'll See
+Total requests sent during the test
+
+Success rate percentage of successful responses
+
+Response times including average and maximum durations
+
+Reliability verdict - STABLE, DEGRADING, or UNSTABLE based on performance thresholds
+
 ### Verdict Scale
-STABLE - >95% success rate, <0.5s response
+- STABLE - >95% success rate, <0.5s response
 
-DEGRADING - >80% success rate
+- DEGRADING - >80% success rate
 
-UNSTABLE - ≤80% success rate
+- UNSTABLE - ≤80% success rate
 
 ## Disclaimer
-Use responsibly. Do not test production systems aggressively.
-Default safety limits are in place to prevent accidental overload.
+Use this tool responsibly - don't aggressively test live services, respect API rate limits, and be mindful that excessive requests can impact server performance.
+
