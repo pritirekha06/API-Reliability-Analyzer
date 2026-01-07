@@ -1,6 +1,6 @@
 # API Reliability Analyzer
 
-A professional tool to test and monitor API/website reliability with comprehensive metrics.
+A web-based testing tool that monitors API and website performance by checking response reliability, measuring speed, and analyzing consistency over repeated requests.
 
 ## Prerequisites
 - Python 3.x
@@ -14,7 +14,9 @@ pip install -r requirements.txt
 ```
 
 ### Run the server
+```
 uvicorn main:app --reload
+```
 
 ## How to Use
 Enter URL - Any API endpoint or website URL
