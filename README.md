@@ -17,15 +17,15 @@ uvicorn main:app --reload
 ```
 
 ## How to Use
-- ``Enter URL`` - Any API endpoint or website URL
+- Enter URL - Any API endpoint or website URL
 
-- ``Set Duration`` - Test duration in seconds (1-30)
+- Set Duration - Test duration in seconds (1-30)
 
-- ``Set RPS`` - Requests per second (1-5)
+- Set RPS - Requests per second (1-5)
 
-- ``Start Test`` - Click button to begin analysis
+- Start Test - Click button to begin analysis
 
-- ``View Results`` - See comprehensive metrics
+- View Results - See comprehensive metrics
 
 ## What You'll See
 - Total requests sent during the test
@@ -37,11 +37,11 @@ uvicorn main:app --reload
 - Reliability verdict - STABLE, DEGRADING, or UNSTABLE based on performance thresholds
 
 ### Verdict Scale
-- STABLE - >95% success rate, <0.5s response
+- ``STABLE`` - >95% success rate, <0.5s response
 
-- DEGRADING - >80% success rate
+- ``DEGRADING`` - >80% success rate
 
-- UNSTABLE - ≤80% success rate
+- ``UNSTABLE`` - ≤80% success rate
 
 ## Disclaimer
 Use this tool responsibly - don't aggressively test live services, respect API rate limits, and be mindful that excessive requests can impact server performance.
