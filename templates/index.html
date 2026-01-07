@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Checker</title>
+    <style>
+        body { font-family: Arial; max-width: 600px; margin: 40px auto; padding: 20px; }
+        .card { border: 1px solid #ccc; padding: 20px; margin: 20px 0; }
+        input, button { padding: 10px; margin: 5px 0; width: 100%; }
+        button { background: #0066cc; color: white; border: none; }
+        .result { margin-top: 20px; padding: 15px; background: #f5f5f5; }
+    </style>
+</head>
+<body>
+    <h2>API Reliability Checker</h2>
+    
+    <div class="card">
+        <form id="form">
+            API URL: <input type="text" id="url" required><br>
+            Duration (sec): <input type="number" id="duration" value="10"><br>
+            Requests/sec: <input type="number" id="rps" value="2"><br>
+            <button type="submit">Start Test</button>
+        </form>
+        
+        <div style="display:none; margin-top:10px;" id="loading">
+            Testing... Please wait
+        </div>
+    </div>
+    
+    <div class="result" id="result" style="display:none;">
+        <h3>Results:</h3>
+        <pre id="output"></pre>
+    </div>
+
+    <script>
+        document.getElementById("form").onsubmit = async (e) => {
+            e.preventDefault();
+            
+            // Show loading, hide old results
+            document.getElementById("loading").style.display = "block";
+            document.getElementById("result").style.display = "none";
+            
+            const res = await fetch("/analyze", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({
+                    url: document.getElementById("url").value,
+                    duration: document.getElementById("duration").value,
+                    rps: document.getElementById("rps").value
+                })
+            });
+            
+            const data = await res.json();
+            
+            // Show results
+            document.getElementById("loading").style.display = "none";
+            document.getElementById("result").style.display = "block";
+            document.getElementById("output").innerText = 
+                JSON.stringify(data, null, 2);
+        };
+    </script>
+</body>
+</html>
